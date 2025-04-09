@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ميزات روبوت المحادثة - الدخيل للعود</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .features-page {
+            padding: 80px 0;
+        }
+        
+        .feature-section {
+            margin-bottom: 60px;
+        }
+        
+        .feature-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .feature-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .feature-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .feature-detail {
+            flex: 1 1 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-detail:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-detail h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-detail h3 i {
+            margin-left: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .feature-detail p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .feature-detail ul {
+            padding-right: 20px;
+        }
+        
+        .feature-detail ul li {
+            margin-bottom: 10px;
+        }
+        
+        .feature-image {
+            flex: 1 1 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .cta-section {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn.primary {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+        
+        .cta-btn.secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .feature-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .feature-details {
+                flex-direction: column;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">الدخيل للعود</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="features.html" class="active">الميزات</a></li>
+                    <li><a href="documentation.html">التوثيق</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="features-page">
+        <div class="container">
+            <h1 class="section-title">ميزات روبوت المحادثة</h1>
+            
+            <section class="feature-section">
+                <h2>تجربة مستخدم متميزة</h2>
+                <p>يوفر روبوت المحادثة لمتجر الدخيل للعود تجربة مستخدم سلسة وسهلة، مصممة لتلبية احتياجات العملاء بكفاءة وفعالية.</p>
+                
+                <div class="feature-details">
+                    <div class="feature-detail">
+                        <h3><i class="fas fa-clock"></i> متاح على مدار الساعة</h3>
+                        <p>روبوت المحادثة متاح للعملاء 24 ساعة في اليوم، 7 أيام في الأسبوع، مما يضمن حصولهم على المساعدة في أي وقت يحتاجون إليها.</p>
+                        <ul>
+                            <li>دعم مستمر دون انقطاع</li>
+                            <li>استجابة فورية لاستفسارات العملاء</li>
+                            <li>تقليل وقت الانتظار للحصول على المساعدة</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-detail">
+                        <h3><i class="fas fa-language"></i> دعم اللغة العربية</h3>
+                        <p>تم تصميم الروبوت خصيصاً للتعامل مع اللغة العربية بكفاءة عالية، مما يضمن فهم استفسارات العملاء والرد عليها بشكل دقيق.</p>
+                        <ul>
+                            <li>فهم اللهجات العربية المختلفة</li>
+                            <li>التعامل مع الأخطاء الإملائية الشائعة</li>
+                            <li>استخدام لغة عربية سليمة وواضحة في الردود</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-detail">
+                        <h3><i class="fas fa-mobile-alt"></i> متوافق مع جميع الأجهزة</h3>
+                        <p>يعمل روبوت المحادثة بسلاسة على جميع الأجهزة، بما في ذلك أجهزة الكمبيوتر والهواتف الذكية والأجهزة اللوحية.</p>
+                        <ul>
+                            <li>تصميم متجاوب يتكيف مع حجم الشاشة</li>
+                            <li>سهولة الاستخدام على شاشات اللمس</li>
+                            <li>أداء سريع على جميع الأجهزة</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="feature-section">
+                <h2>ذكاء اصطناعي متقدم</h2>
+                <p>يستخدم الروبوت تقنيات الذكاء الاصطناعي المتقدمة لفهم احتياجات العملاء وتقديم المساعدة المناسبة.</p>
+                
+                <div class="feature-details">
+                    <div class="feature-image">
+                        <img src="https://via.placeholder.com/600x400" alt="تقنيات الذكاء الاصطناعي">
+                    </div>
+                    
+                    <div class="feature-detail">
+                        <h3><i class="fas fa-brain"></i> فهم اللغة الطبيعية</h3>
+                        <p>يستخدم الروبوت تقنيات معالجة اللغة الطبيعية (NLP) لفهم استفسارات العملاء بشكل دقيق، حتى عندما تكون مكتوبة بلغة غير رسمية أو تحتوي على أخطاء إملائية.</p>
+                        <ul>
+                            <li>تحليل النية (Intent Analysis)</li>
+                            <li>استخراج الكيانات (Entity Extraction)</li>
+                            <li>تحليل المشاعر (Sentiment Analysis)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="feature-details">
+                    <div class="feature-detail">
+                        <h3><i class="fas fa-robot"></i> التعلم المستمر</h3>
+                        <p>يتعلم الروبوت باستمرار من تفاعلات المستخدمين، مما يجعله أكثر ذكاءً وفعالية مع مرور الوقت.</p>
+                        <ul>
+                            <li>تحسين الردود بناءً على تفاعلات المستخدمين السابقة</li>
+                            <li>إضافة أنماط جديدة من الأسئلة والاستفسارات</li>
+                            <li>تحديث قاعدة المعرفة بشكل مستمر</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-detail">
+                        <h3><i class="fas fa-comments"></i> محادثات طبيعية</h3>
+                        <p>يوفر الروبوت تجربة محادثة طبيعية وسلسة، تشبه المحادثة مع موظف خدمة عملاء بشري.</p>
+                        <ul>
+                            <li>الحفاظ على سياق المحادثة</li>
+                            <li>فهم الإشارات والإحالات في الجمل</li>
+                            <li>تقديم ردود مخصصة حسب احتياجات كل عميل</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="feature-section">
+                <h2>دعم شامل للعملاء</h2>
+                <p>يقدم روبوت المحادثة دعماً شاملاً للعملاء في جميع مراحل رحلة التسوق.</p>
+                
+                <div class="feature-details">
+                    <div class="feature-detail">
+                        <h3><i class="fas fa-search"></i> البحث عن المنتجات</h3>
+                        <p>يساعد الروبوت العملاء في العثور على المنتجات التي يبحثون عنها بسرعة وسهولة.</p>
+                        <ul>
+                            <li>البحث حسب اسم المنتج</li>
+                            <li>البحث حسب الفئة</li>
+                            <li>البحث حسب السعر أو الخصائص</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-detail">
+                        <h3><i class="fas fa-tag"></i> معلومات المنتجات والأسعار</h3>
+                        <p>يقدم الروبوت معلومات دقيقة ومفصلة عن المنتجات والأسعار والعروض.</p>
+                        <ul>
+                            <li>وصف تفصيلي للمنتجات</li>
+                            <li>معلومات عن الأسعار والخصومات</li>
+                            <li>معلومات عن توفر المنتجات في المخزون</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-detail">
+                        <h3><i class="fas fa-shopping-cart"></i> المساعدة في عملية الشراء</h3>
+                        <p>يساعد الروبوت العملاء في إتمام عملية الشراء بسلاسة وسهولة.</p>
+                        <ul>
+                            <li>إضافة المنتجات إلى سلة التسوق</li>
+                            <li>معلومات عن طرق الدفع</li>
+                            <li>متابعة حالة الطلبات</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="feature-section">
+                <h2>سياسات المتجر والمساعدة</h2>
+                <p>يقدم الروبوت معلومات شاملة عن سياسات المتجر ويساعد في حل المشكلات.</p>
+                
+                <div class="feature-details">
+                    <div class="feature-detail">
+                        <h3><i class="fas fa-exchange-alt"></i> سياسات الاسترجاع</h3>
+                        <p>يشرح الروبوت سياسات الاستبدال والاسترجاع بوضوح، ويجيب على جميع استفسارات العملاء المتعلقة بإرجاع المنتجات.</p>
+                    </div>
+                    
+                    <div class="feature-detail">
+                        <h3><i class="fas fa-truck"></i> معلومات الشحن والتوصيل</h3>
+                        <p>يوفر الروبوت معلومات دقيقة عن طرق الشحن والتوصيل، ومدة التوصيل المتوقعة، وتكاليف الشحن.</p>
+                    </div>
+                    
+                    <div class="feature-detail">
+                        <h3><i class="fas fa-credit-card"></i> طرق الدفع</h3>
+                        <p>يقدم الروبوت معلومات عن طرق الدفع المتاحة، بما في ذلك خيارات التقسيط وطرق الدفع الإلكترونية.</p>
+                    </div>
+                    
+                    <div class="feature-detail">
+                        <h3><i class="fas fa-headset"></i> التحويل إلى خدمة العملاء</h3>
+                        <p>عندما يتطلب الأمر تدخلاً بشرياً، يمكن للروبوت تحويل المحادثة بسلاسة إلى أحد موظفي خدمة العملاء.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div class="cta-section">
+            <div class="container">
+                <h2>جرب روبوت المحادثة الآن</h2>
+                <p>اكتشف كيف يمكن لروبوت المحادثة الذكي تحسين تجربة التسوق الخاصة بك في متجر الدخيل للعود.</p>
+                <div class="cta-buttons">
+                    <a href="index.html#demo" class="cta-btn primary">جرب الروبوت</a>
+                    <a href="documentation.html" class="cta-btn secondary">اقرأ التوثيق</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; 2025 - روبوت المحادثة لمتجر الدخيل للعود</p>
+            <p>للاستفسارات والدعم الفني: <a href="mailto:support@aldakheeloud.com">support@aldakheeloud.com</a></p>
+        </div>
+    </footer>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>

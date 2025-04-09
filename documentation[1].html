@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توثيق روبوت المحادثة - الدخيل للعود</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .documentation-page {
+            padding: 80px 0;
+        }
+        
+        .docs-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .docs-sidebar {
+            background-color: #f0f0f0;
+            padding: 20px;
+            position: sticky;
+            top: 20px;
+            height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+        
+        .docs-sidebar ul {
+            list-style: none;
+        }
+        
+        .docs-sidebar ul li {
+            margin-bottom: 10px;
+        }
+        
+        .docs-sidebar ul li a {
+            color: var(--dark-color);
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .docs-sidebar ul li a:hover,
+        .docs-sidebar ul li a.active {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        
+        .docs-content {
+            padding: 30px;
+        }
+        
+        .docs-section {
+            margin-bottom: 40px;
+        }
+        
+        .docs-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .docs-section h3 {
+            color: var(--primary-color);
+            margin: 25px 0 15px;
+        }
+        
+        .docs-section p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .docs-section ul, .docs-section ol {
+            margin-bottom: 15px;
+            padding-right: 20px;
+        }
+        
+        .docs-section li {
+            margin-bottom: 10px;
+        }
+        
+        .docs-section code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+            direction: ltr;
+            display: inline-block;
+        }
+        
+        .code-block {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            direction: ltr;
+        }
+        
+        .code-block code {
+            background-color: transparent;
+            padding: 0;
+            font-family: monospace;
+            white-space: pre;
+            display: block;
+        }
+        
+        .note {
+            background-color: #fff8e1;
+            border-right: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .warning {
+            background-color: #ffebee;
+            border-right: 4px solid #f44336;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .tip {
+            background-color: #e8f5e9;
+            border-right: 4px solid #4caf50;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .docs-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        table th, table td {
+            padding: 12px 15px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table th {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        @media (max-width: 768px) {
+            .docs-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .docs-sidebar {
+                position: static;
+                height: auto;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">الدخيل للعود</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="features.html">الميزات</a></li>
+                    <li><a href="documentation.html" class="active">التوثيق</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="documentation-page">
+        <div class="container">
+            <h1 class="section-title">توثيق روبوت المحادثة</h1>
+            
+            <div class="docs-container">
+                <div class="docs-sidebar">
+                    <ul>
+                        <li><a href="#overview" class="active">نظرة عامة</a></li>
+                        <li><a href="#getting-started">البدء السريع</a></li>
+                        <li><a href="#features">الميزات الرئيسية</a></li>
+                        <li><a href="#conversation-flows">تدفقات المحادثة</a></li>
+                        <li><a href="#integration">دليل التكامل</a></li>
+                        <li><a href="#customization">التخصيص</a></li>
+                        <li><a href="#api">واجهة برمجة التطبيقات</a></li>
+                        <li><a href="#faq">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                
+                <div class="docs-content">
+                    <section id="overview" class="docs-section">
+                        <h2>نظرة عامة</h2>
+                        <p>روبوت المحادثة لمتجر الدخيل للعود هو مساعد افتراضي ذكي مصمم لتحسين تجربة العملاء وتقديم دعم فوري لهم. يهدف الروبوت إلى مساعدة العملاء في الاستعلام عن المنتجات، والمساعدة في عملية الشراء، وتقديم معلومات عن سياسات المتجر، والتعامل مع المشاكل والشكاوى.</p>
+                        
+                        <p>يستخدم الروبوت تقنيات الذكاء الاصطناعي ومعالجة اللغة الطبيعية لفهم استفسارات العملاء والرد عليها بشكل دقيق وفعال. كما يتميز بقدرته على التعلم والتحسن مع مرور الوقت بناءً على تفاعلات المستخدمين.</p>
+                        
+                        <div class="note">
+                            <strong>ملاحظة:</strong> هذا التوثيق مخصص للمطورين والمسؤولين التقنيين الذين يرغبون في فهم كيفية عمل الروبوت وتخصيصه وتكامله مع أنظمة أخرى.
+                        </div>
+                    </section>
+                    
+                    <section id="getting-started" class="docs-section">
+                        <h2>البدء السريع</h2>
+                        <p>لبدء استخدام روبوت المحادثة، اتبع الخطوات التالية:</p>
+                        
+                        <h3>1. متطلبات النظام</h3>
+                        <ul>
+                            <li><strong>متطلبات الخادم:</strong>
+                                <ul>
+                                    <li>نظام التشغيل: Linux (Ubuntu 20.04 LTS أو أحدث)</li>
+                                    <li>وحدة المعالجة المركزية: 4 نوى على الأقل</li>
+                                    <li>ذاكرة الوصول العشوائي: 8 جيجابايت على الأقل</li>
+                                    <li>مساحة التخزين: 50 جيجابايت على الأقل (SSD مفضل)</li>
+                                </ul>
+                            </li>
+                            <li><strong>البرمجيات المطلوبة:</strong>
+                                <ul>
+                                    <li>Node.js (v14+)</li>
+                                    <li>Python (v3.8+)</li>
+                                    <li>MongoDB (v4.4+)</li>
+                                    <li>Redis (v6.0+)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <h3>2. التثبيت</h3>
+                        <p>يمكن تثبيت روبوت المحادثة باستخدام Docker أو من المصدر مباشرة.</p>
+                        
+                        <h4>التثبيت باستخدام Docker</h4>
+                        <div class="code-block">
+                            <code>
+# سحب صورة Docker
+docker pull aldakheeloud/chatbot:latest
+
+# تشغيل الحاوية
+docker run -d -p 3000:3000 -p 5000:5000 \
+  -e MONGODB_URI=mongodb://mongodb:27017/aldakheeloud-chatbot \
+  -e REDIS_HOST=redis \
+  -e REDIS_PORT=6379 \
+  --name aldakheeloud-chatbot \
+  aldakheeloud/chatbot:latest
+                            </code>
+                        </div>
+                        
+                        <h4>التثبيت من المصدر</h4>
+                        <div class="code-block">
+                            <code>
+# استنساخ المستودع
+git clone https://github.com/aldakheeloud/chatbot.git
+cd chatbot
+
+# تثبيت اعتماديات Node.js
+cd frontend
+npm install
+cd ../backend
+npm install
+
+# تثبيت اعتماديات Python
+cd ../conversation-engine
+pip3 install -r requirements.txt
+
+# تشغيل التطبيق
+cd ..
+docker-compose up -d
+                            </code>
+                        </div>
+                        
+                        <h3>3. التكوين الأساسي</h3>
+                        <p>بعد التثبيت، يمكنك تكوين الروبوت من خلال تعديل ملف <code>config.js</code> في المجلد الرئيسي:</p>
+                        
+                        <div class="code-block">
+                            <code>
+// config.js
+module.exports = {
+  // إعدادات قاعدة البيانات
+  database: {
+    mongodb: {
+      uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/aldakheeloud-chatbot'
+    },
+    redis: {
+      host: process.env.REDIS_HOST || 'localhost',
+      port: process.env.REDIS_PORT || 6379
+    }
+  },
+  
+  // إعدادات الروبوت
+  chatbot: {
+    name: 'مساعد الدخيل للعود',
+    initialMessage: 'مرحباً بك في متجر الدخيل للعود! كيف يمكنني مساعدتك اليوم؟',
+    language: 'ar',
+    suggestedQuestions: [
+      'ما هي المنتجات المتوفرة؟',
+      'ما هي سياسة الاسترجاع؟',
+      'كم تستغرق عملية التوصيل؟',
+      'ما هي طرق الدفع المتاحة؟'
+    ]
+  },
+  
+  // إعدادات الخادم
+  server: {
+    port: process.env.PORT || 3000,
+    apiPath: '/api'
+  }
+};
+                            </code>
+                        </div>
+                    </section>
+                    
+                    <section id="features" class="docs-section">
+                        <h2>الميزات الرئيسية</h2>
+                        
+                        <h3>1. معالجة اللغة الطبيعية</h3>
+                        <p>يستخدم الروبوت تقنيات معالجة اللغة الطبيعية (NLP) لفهم استفسارات العملاء بشكل دقيق. يتضمن ذلك:</p>
+                        <ul>
+                            <li><strong>تحليل النية (Intent Analysis):</strong> تحديد الغرض من استفسار العميل.</li>
+                            <li><strong>استخراج الكيانات (Entity Extraction):</strong> استخراج المعلومات المهمة مثل أسماء المنتجات والفئات.</li>
+                            <li><strong>تحليل المشاعر (Sentiment Analysis):</strong> تحديد مشاعر العميل للاستجابة بشكل مناسب.</li>
+                        </ul>
+                        
+                        <h3>2. قاعدة المعرفة</h3>
+                        <p>يعتمد الروبوت على قاعدة معرفة شاملة تحتوي على معلومات عن:</p>
+                        <ul>
+                            <li>المنتجات وفئاتها</li>
+                            <li>الأسعار والعروض</li>
+                            <li>سياسات المتجر (الشحن، الاسترجاع، الخصوصية)</li>
+                            <li>الأسئلة الشائعة وإجاباتها</li>
+                        </ul>
+                        
+                        <h3>3. تدفقات المحادثة</h3>
+                        <p>يستخدم الروبوت تدفقات محادثة مصممة مسبقاً للتعامل مع مختلف سيناريوهات التفاعل مع العملاء، مثل:</p>
+                        <ul>
+                            <li>الاستعلام عن المنتجات</li>
+                            <li>المساعدة في عملية الشراء</li>
+                            <li>الاستعلام عن سياسات المتجر</li>
+                            <li>التعامل مع المشاكل والشكاوى</li>
+                        </ul>
+                        
+                        <h3>4. التكامل مع أنظمة المتجر</h3>
+                        <p>يمكن تكامل الروبوت مع أنظمة المتجر المختلفة، مثل:</p>
+                        <ul>
+                            <li>نظام إدارة المحتوى</li>
+                            <li>نظام إدارة المخزون</li>
+                            <li>نظام إدارة علاقات العملاء (CRM)</li>
+                            <li>نظام تتبع الطلبات</li>
+                        </ul>
+                    </section>
+                    
+                    <section id="conversation-flows" class="docs-section">
+                        <h2>تدفقات المحادثة</h2>
+                        <p>تدفقات المحادثة هي مسارات محددة مسبقاً للتفاعل بين الروبوت والعملاء. تساعد هذه التدفقات الروبوت على توجيه المحادثة بطريقة منظمة ومفيدة.</p>
+                        
+                        <h3>1. تدفق الترحيب والتعريف</h3>
+                        <div class="table-container">
+                            <table>
+                                <tr>
+                                    <th>المتحدث</th>
+                                    <th>الرسالة</th>
+                                </tr>
+                                <tr>
+                                    <td>الروبوت</td>
+                                    <td>مرحباً بك في متجر الدخيل للعود! أنا المساعد الافتراضي الخاص بالمتجر، وأسعد بمساعدتك. كيف يمكنني خدمتك اليوم؟</td>
+                                </tr>
+                                <tr>
+                                    <td>المستخدم</td>
+                                    <td>ما هي المنتجات التي تقدمونها؟</td>
+                                </tr>
+                                <tr>
+                                    <td>الروبوت</td>
+                                    <td>متجر الدخيل للعود متخصص في بيع أجود أنواع العطور ومنتجات العود والبخور. نقدم مجموعة متنوعة من المنتجات تشمل:
+                                    <br>- العطور الفاخرة
+                                    <br>- العود والبخور بأنواعه
+                                    <br>- الزيوت العطرية والمخلطات
+                                    <br>- عطور الشعر ومعطرات الجسم
+                                    <br>- معطرات المنزل
+                                    <br>- مجموعات الهدايا والتوزيعات
+                                    <br><br>هل تبحث عن فئة معينة من هذه المنتجات؟</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <h3>2. تدفق الاستعلام عن المنتجات</h3>
+                        <div class="table-container">
+                            <table>
+                                <tr>
+                                    <th>المتحدث</th>
+                                    <th>الرسالة</th>
+                                </tr>
+                                <tr>
+                                    <td>المستخدم</td>
+                                    <td>هل لديكم عطر راكز كراميل؟</td>
+                                </tr>
+                                <tr>
+                                    <td>الروبوت</td>
+                                    <td>نعم، عطر راكز كراميل متوفر لدينا! إليك معلومات عنه:
+                                    <br>- الحجم: 150 مل
+                                    <br>- السعر الحالي: 149.00 ريال (خصم 50% من السعر الأصلي 298.00 ريال)
+                                    <br>- حالة المخزون: متوفر
+                                    <br>- رقم المنتج: 6281150555594
+                                    <br><br>هل ترغب في:
+                                    <br>- معرفة المزيد من التفاصيل عن هذا العطر
+                                    <br>- إضافته إلى سلة التسوق
+                                    <br>- مشاهدة منتجات مشابهة
+                                    <br>- الاستفسار عن منتج آخر</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="tip">
+                            <strong>نصيحة:</strong> يمكنك تخصيص تدفقات المحادثة حسب احتياجات متجرك من خلال تعديل ملفات التدفق في المجلد <code>conversation-flows</code>.
+                        </div>
+                    </section>
+                    
+                    <section id="integration" class="docs-section">
+                        <h2>دليل التكامل</h2>
+                        <p>يمكن تكامل روبوت المحادثة مع موقع الويب الخاص بك بسهولة باستخدام سكريبت التكامل.</p>
+                        
+                        <h3>1. إضافة سكريبت التكامل</h3>
+                        <p>أضف الكود التالي في نهاية صفحة HTML الرئيسية لموقعك:</p>
+                        
+                        <div class="code-block">
+                            <code>
+<!-- أضف هذا الكود في نهاية صفحة HTML الرئيسية لموقعك -->
+<script src="https://your-chatbot-domain.com/chatbot-widget.js" async></script>
+<link rel="stylesheet" href="https://your-chatbot-domain.com/chatbot-widget.css">
+                            </code>
+                        </div>
+                        
+                        <h3>2. تخصيص الروبوت</h3>
+                        <p>يمكنك تخصيص مظهر وسلوك الروبوت من خلال إضافة إعدادات التكوين:</p>
+                        
+                        <div class="code-block">
+                            <code>
+<script>
+    window.chatbotConfig = {
+        theme: {
+            primaryColor: '#8b5a2b',
+            secondaryColor: '#d4af37',
+            textColor: '#333'
+        },
+        position: 'left', // 'left' أو 'right'
+        initialMessage: 'مرحباً بك في متجر الدخيل للعود! كيف يمكنني مساعدتك اليوم؟',
+        suggestedQuestions: [
+            'ما هي المنتجات المتوفرة؟',
+            'ما هي سياسة الاسترجاع؟',
+            'كم تستغرق عملية التوصيل؟'
+        ]
+    };
+</script>
+                            </code>
+                        </div>
+                        
+                        <h3>3. التكامل مع نظام إدارة المحتوى</h3>
+                        <p>إذا كنت تستخدم نظام إدارة محتوى مثل WordPress أو Shopify، يمكنك استخدام الإضافات المتاحة:</p>
+                        
+                        <ul>
+                            <li><strong>WordPress:</strong> قم بتثبيت إضافة "Aldakheeloud Chatbot" من متجر الإضافات.</li>
+                            <li><strong>Shopify:</strong> قم بتثبيت تطبيق "Aldakheeloud Chatbot" من متجر التطبيقات.</li>
+                        </ul>
+                        
+                        <div class="warning">
+                            <strong>تحذير:</strong> تأكد من تحديث عنوان URL الخاص بالروبوت في سكريبت التكامل ليشير إلى الخادم الخاص بك.
+                        </div>
+                    </section>
+                    
+                    <section id="customization" class="docs-section">
+                        <h2>التخصيص</h2>
+                        <p>يمكن تخصيص روبوت المحادثة بعدة طرق لتلبية احتياجات متجرك.</p>
+                        
+                        <h3>1. تخصيص المظهر</h3>
+                        <p>يمكنك تخصيص مظهر الروبوت من خلال تعديل ملف CSS:</p>
+                        
+                        <div class="code-block">
+                            <code>
+/* تخصيص ألوان الروبوت */
+:root {
+    --primary-color: #8b5a2b; /* اللون الرئيسي */
+    --secondary-color: #d4af37; /* اللون الثانوي */
+    --dark-color: #333; /* لون النص الداكن */
+    --light-color: #f4f4f4; /* لون الخلفية الفاتح */
+}
+
+/* تخصيص حجم الروبوت */
+.chatbot-widget {
+    width: 350px; /* عرض الروبوت */
+    height: 500px; /* ارتفاع الروبوت */
+}
+
+/* تخصيص موضع الروبوت */
+.chatbot-widget {
+    bottom: 20px; /* المسافة من أسفل الصفحة */
+    left: 20px; /* المسافة من يسار الصفحة */
+}
+                            </code>
+                        </div>
+                        
+                        <h3>2. تخصيص الردود</h3>
+                        <p>يمكنك تخصيص ردود الروبوت من خلال تعديل ملف الردود:</p>
+                        
+                        <div class="code-block">
+                            <code>
+// responses.js
+const responses = {
+    "مرحبا": "مرحباً بك في متجر الدخيل للعود! كيف يمكنني مساعدتك اليوم؟",
+    "السلام عليكم": "وعليكم السلام ورحمة الله وبركاته! أهلاً بك في متجر الدخيل للعود. كيف يمكنني خدمتك؟",
+    "ما هي المنتجات المتوفرة": "متجر الدخيل للعود متخصص في بيع أجود أنواع العطور ومنتجات العود والبخور. نقدم مجموعة متنوعة من المنتجات تشمل:\n- العطور الفاخرة\n- العود والبخور بأنواعه\n- الزيوت العطرية والمخلطات\n- عطور الشعر ومعطرات الجسم\n- معطرات المنزل\n- مجموعات الهدايا والتوزيعات\n\nهل تبحث عن فئة معينة من هذه المنتجات؟",
+    // المزيد من الردود...
+};
+
+module.exports = responses;
+                            </code>
+                        </div>
+                        
+                        <h3>3. تخصيص تدفقات المحادثة</h3>
+                        <p>يمكنك تخصيص تدفقات المحادثة من خلال تعديل ملفات التدفق:</p>
+                        
+                        <div class="code-block">
+                            <code>
+// conversation-flows/product-inquiry.js
+module.exports = {
+    name: 'product_inquiry',
+    intents: ['ask_product', 'product_info', 'product_price'],
+    flow: [
+        {
+            id: 'ask_product',
+            message: 'هل تبحث عن منتج معين؟',
+            responses: [
+                {
+                    intent: 'yes',
+                    next: 'product_name'
+                },
+                {
+                    intent: 'no',
+                    next: 'product_category'
+                }
+            ]
+        },
+        // المزيد من خطوات التدفق...
+    ]
+};
+                            </code>
+                        </div>
+                    </section>
+                    
+                    <section id="api" class="docs-section">
+                        <h2>واجهة برمجة التطبيقات</h2>
+                        <p>يوفر الروبوت واجهة برمجة تطبيقات (API) للتكامل مع تطبيقات أخرى.</p>
+                        
+                        <h3>1. إنشاء جلسة محادثة</h3>
+                        <div class="code-block">
+                            <code>
+POST /api/chat/sessions
+Content-Type: application/json
+
+Response:
+{
+    "sessionId": "550e8400-e29b-41d4-a716-446655440000"
+}
+                            </code>
+                        </div>
+                        
+                        <h3>2. إرسال رسالة</h3>
+                        <div class="code-block">
+                            <code>
+POST /api/chat/messages
+Content-Type: application/json
+
+{
+    "sessionId": "550e8400-e29b-41d4-a716-446655440000",
+    "message": "هل لديكم عطر راكز كراميل؟"
+}
+
+Response:
+{
+    "response": "نعم، عطر راكز كراميل متوفر لدينا! إليك معلومات عنه:\n- الحجم: 150 مل\n- السعر الحالي: 149.00 ريال (خصم 50% من السعر الأصلي 298.00 ريال)\n- حالة المخزون: متوفر\n- رقم المنتج: 6281150555594\n\nهل ترغب في معرفة المزيد من التفاصيل عن هذا العطر؟",
+    "suggestions": [
+        "معرفة المزيد من التفاصيل",
+        "إضافة إلى سلة التسوق",
+        "مشاهدة منتجات مشابهة"
+    ]
+}
+                            </code>
+                        </div>
+                        
+                        <h3>3. الحصول على سجل المحادثة</h3>
+                        <div class="code-block">
+                            <code>
+GET /api/chat/sessions/550e8400-e29b-41d4-a716-446655440000/history
+Content-Type: application/json
+
+Response:
+{
+    "sessionId": "550e8400-e29b-41d4-a716-446655440000",
+    "history": [
+        {
+            "role": "bot",
+            "message": "مرحباً بك في متجر الدخيل للعود! كيف يمكنني مساعدتك اليوم؟",
+            "timestamp": "2025-04-09T07:30:00.000Z"
+        },
+        {
+            "role": "user",
+            "message": "هل لديكم عطر راكز كراميل؟",
+            "timestamp": "2025-04-09T07:30:15.000Z"
+        },
+        {
+            "role": "bot",
+            "message": "نعم، عطر راكز كراميل متوفر لدينا! إليك معلومات عنه:\n- الحجم: 150 مل\n- السعر الحالي: 149.00 ريال (خصم 50% من السعر الأصلي 298.00 ريال)\n- حالة المخزون: متوفر\n- رقم المنتج: 6281150555594\n\nهل ترغب في معرفة المزيد من التفاصيل عن هذا العطر؟",
+            "timestamp": "2025-04-09T07:30:18.000Z"
+        }
+    ]
+}
+                            </code>
+                        </div>
+                    </section>
+                    
+                    <section id="faq" class="docs-section">
+                        <h2>الأسئلة الشائعة</h2>
+                        
+                        <h3>1. هل يمكن استخدام الروبوت على الهواتف المحمولة؟</h3>
+                        <p>نعم، الروبوت متوافق تماماً مع الهواتف المحمولة والأجهزة اللوحية، ويتكيف تلقائياً مع حجم الشاشة.</p>
+                        
+                        <h3>2. هل يدعم الروبوت لغات أخرى غير العربية؟</h3>
+                        <p>حالياً، الروبوت مصمم للعمل باللغة العربية بشكل أساسي. يمكن إضافة دعم للغات أخرى من خلال تخصيص الروبوت وإضافة نماذج لغوية إضافية.</p>
+                        
+                        <h3>3. كيف يمكنني تحديث قاعدة المعرفة؟</h3>
+                        <p>يمكنك تحديث قاعدة المعرفة من خلال تعديل ملفات JSON في المجلد <code>knowledge-base</code> أو من خلال واجهة الإدارة إذا كانت متاحة.</p>
+                        
+                        <h3>4. هل يمكن تكامل الروبوت مع نظام إدارة علاقات العملاء (CRM)؟</h3>
+                        <p>نعم، يمكن تكامل الروبوت مع أنظمة CRM الشائعة مثل Salesforce وHubSpot وZoho CRM من خلال واجهة برمجة التطبيقات (API).</p>
+                        
+                        <h3>5. كيف يمكنني مراقبة أداء الروبوت؟</h3>
+                        <p>يوفر الروبوت لوحة تحكم للتحليلات تعرض مقاييس مثل عدد المحادثات، ومعدل الرضا، والأسئلة الأكثر شيوعاً، ونقاط الفشل في المحادثات.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; 2025 - روبوت المحادثة لمتجر الدخيل للعود</p>
+            <p>للاستفسارات والدعم الفني: <a href="mailto:support@aldakheeloud.com">support@aldakheeloud.com</a></p>
+        </div>
+    </footer>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>
